@@ -1,0 +1,165 @@
+/* Core Navbar */
+.container {
+  max-width: 1200px; /* Limits how far apart items can go */
+  margin: 0 auto;    /* Centers the container itself */
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Pushes Logo to left, Socials to right */
+  padding: 0 20px;
+}
+
+nav.navbar {
+  padding: 18px 0;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 9999;
+  transition: 0.32s ease-in-out;
+  display: flex;
+  align-items: center;
+}
+
+nav.navbar.scrolled {
+  padding: 12px 0; /* Slightly more than 0 for breathing room */
+  background-color: #121212;
+  box-shadow: 0 5px 10px rgba(255, 255, 255, 0.1);
+}
+
+nav.navbar .navbar-brand {
+  width: 120px; /* Changed from 9% to fixed for better Tailwind control */
+  display: block;
+}
+
+/* Nav Links */
+nav.navbar .navbar-nav .nav-link.navbar-link {
+  font-weight: 400;
+  color: #fff !important;
+  letter-spacing: 0.8px;
+  padding: 0 25px;
+  font-size: 18px;
+  opacity: 0.75;
+  transition: 0.3s ease-in-out;
+}
+
+nav.navbar .navbar-nav .nav-link.navbar-link:hover,
+nav.navbar .navbar-nav .nav-link.navbar-link.active {
+  opacity: 1;
+}
+
+/* Right Side Text/Socials */
+span.navbar-text {
+  display: flex;
+  align-items: center;
+}
+
+.social-icon {
+  display: flex;
+  margin-left: 14px;
+  gap: 10px;
+}
+
+.social-icon a {
+  width: 42px;
+  height: 42px;
+  background: rgba(217, 217, 217, 0.1);
+  display: inline-flex;
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.social-icon a img {
+  width: 20px;
+  z-index: 2;
+  transition: 0.3s ease-in-out;
+}
+
+.social-icon a::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-color: #ffffff;
+  border-radius: 50%;
+  transform: scale(0);
+  transition: 0.3s ease-in-out;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.social-icon a:hover::before {
+  transform: scale(1);
+}
+
+.social-icon a:hover img {
+  filter: brightness(0) saturate(100%) invert(0%);
+}
+
+/* The Button */
+.vvd {
+  font-weight: 700;
+  color: #fff;
+  border: 1px solid #fff;
+  padding: 12px 28px;
+  font-size: 18px;
+  margin-left: 18px;
+  position: relative;
+  background-color: transparent;
+  transition: 0.3s ease-in-out;
+  overflow: hidden;
+}
+
+.vvd span {
+  position: relative;
+  z-index: 2;
+}
+
+.vvd::before {
+  content: "";
+  width: 0%;
+  height: 100%;
+  position: absolute;
+  background-color: #fff;
+  left: 0;
+  top: 0;
+  z-index: 1;
+  transition: 0.3s ease-in-out;
+}
+
+.vvd:hover {
+  color: #121212;
+}
+
+.vvd:hover::before {
+  width: 100%;
+}
+
+/* Mobile Toggler Lines */
+.navbar-toggler-icon {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background-color: #fff;
+  position: relative;
+  transition: all 300ms linear;
+}
+
+.navbar-toggler-icon::after,
+.navbar-toggler-icon::before {
+  width: 24px;
+  height: 2px;
+  background-color: #fff;
+  position: absolute;
+  content: '';
+  left: 0;
+  transition: all 300ms linear;
+}
+
+.navbar-toggler-icon::before { top: -8px; }
+.navbar-toggler-icon::after { top: 8px; }

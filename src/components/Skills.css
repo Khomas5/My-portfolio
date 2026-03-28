@@ -1,0 +1,108 @@
+/* Skills.css */
+
+/* Section container */
+.skill {
+  padding: 0 0 50px 0;
+  position: relative;
+  background: #0f0f0f; /* optional darker background for contrast */
+}
+
+/* Skill box/card */
+.skill-bx {
+  background: #151515;
+  border-radius: 64px;
+  text-align: center;
+  padding: 60px 50px;
+  margin-top: 0;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* Section heading */
+.skill h2 {
+  font-size: 45px;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 20px;
+}
+
+/* Section description */
+.skill p {
+  color: #b8b8b8;
+  font-size: 18px;
+  letter-spacing: 0.8px;
+  line-height: 1.5em;
+  margin: 14px 0 75px 0;
+}
+
+/* Carousel container */
+.skill-slider {
+  width: 80%;
+  margin: 0 auto;
+  position: relative;
+}
+
+/* Carousel item */
+.skill-slider .item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Carousel item images */
+.skill-slider .item img {
+  width: 50%; /* fixed height for uniform display */
+  margin-bottom: 15px;
+  object-fit: contain;
+}
+
+/* Carousel item labels */
+.skill-slider .item h5 {
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 500;
+  text-align: center;
+}
+
+/* Background image on the left */
+.background-image-left {
+  top: 28%;
+  position: absolute;
+  bottom: 0;
+  width: 40%;
+  z-index: -4;
+
+}
+
+/* Responsive tweaks */
+@media (max-width: 1024px) {
+  .skill-bx {
+    padding: 50px 30px;
+  }
+  .skill h2 {
+    font-size: 38px;
+  }
+  .skill p {
+    font-size: 16px;
+  }
+  .skill-slider .item img {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+@media (max-width: 464px) {
+  .skill-bx {
+    padding: 40px 20px;
+  }
+  .skill h2 {
+    font-size: 30px;
+  }
+  .skill p {
+    font-size: 14px;
+  }
+  .skill-slider .item img {
+    width: 80px;
+    height: 80px;
+  }
+}
