@@ -14,8 +14,9 @@ function App() {
       <Banner />
      <Skills />
      <Projects />
+     <ThreeDExperience />
 <Footer />
-<ThreeDExperience />
+
 
       {/* Rest of your portfolio sections go here */}
     </div>
