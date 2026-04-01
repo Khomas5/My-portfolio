@@ -163,3 +163,9 @@ span.navbar-text {
 
 .navbar-toggler-icon::before { top: -8px; }
 .navbar-toggler-icon::after { top: 8px; }
+
+@media (max-width: 768px) {
+  .connect-btn {
+    display: none;
+  }
+}

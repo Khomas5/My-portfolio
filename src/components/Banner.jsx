@@ -47,61 +47,59 @@ export const Banner = () => {
   }, [text, delta, tick]);
 
   return (
-    <section className="banner" id="home">
-      <div className="container mx-auto px-4">
-        <div
-          ref={ref}
-          className={`flex transition-all duration-700 ${
-            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-          }`}
-        >
-          <div className="w-full">
-            <span className="tagline">Welcome to my Portfolio</span>
+<section className="banner" id="home">
+  <div className="banner-container">
+    <div
+      ref={ref}
+      className={`banner-content transition-all duration-700 ${
+        isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+      }`}
+    >
+      <div className="banner-text">
+        <span className="tagline">Welcome to my Portfolio</span>
 
-            <h1>
-              {`Hi! I'm Ana,`}
-              <span
-                className="txt-rotate"
-                data-period="1000"
-                data-rotate='[ "Web Developer"]'
-              >
-                <span className="wrap">{text}</span>
-              </span>
-            </h1>
+        <h1>
+          {`Hi! I'm Ana, `}
+          <span
+            className="txt-rotate"
+            data-period="1000"
+            data-rotate='[ "Web Developer"]'
+          >
+            <span className="wrap">{text}</span>
+          </span>
+        </h1>
 
-            <p className="banner-description">
-              I began my journey in front-end web development in early
-              2022, starting with a 6-month course where I learned HTML, CSS,
-              JavaScript, and the basics of Angular. During the same period,
-              I participated in the Women Tech Hub project at Ilia State
-              University, funded by the British Council, where I gained both
-              theoretical knowledge and hands-on experience in web
-              development. To deepen my skills, I continued learning
-              through Udemy courses focused on advanced CSS, SCSS, and
-              JavaScript. In October 2022, I joined Ascended as an intern,
-              where I worked on real projects, strengthened my practical
-              skills, and gained valuable industry experience. 
-              Currently, I’m expanding my knowledge by studying React and 
-              continuing to grow as a developer.{" "}
-            </p>
+        <p className="banner-description">
+          I began my journey in front-end web development in early
+          2022, starting with a 6-month course where I learned HTML, CSS,
+          JavaScript, and the basics of Angular. During the same period,
+          I participated in the Women Tech Hub project at Ilia State
+          University, funded by the British Council, where I gained both
+          theoretical knowledge and hands-on experience in web
+          development. To deepen my skills, I continued learning
+          through Udemy courses focused on advanced CSS, SCSS, and
+          JavaScript. In October 2022, I joined Ascended as an intern,
+          where I worked on real projects, strengthened my practical
+          skills, and gained valuable industry experience.
+          Currently, I’m expanding my knowledge by studying React and
+          continuing to grow as a developer.
+        </p>
 
-            <button onClick={() => console.log("connect")}>
-              Let's Connect
-            </button>
-          </div>
-
-          <div className="w-full flex justify-center md:justify-end">
-            <div className="w-full max-w-md lg:max-w-xl xl:max-w-2xl">
-              <img
-                src={headerImg}
-                alt="Banner Illustration"
-                className="w-full h-auto object-contain animate-updown"
-              />
-            </div>
-          </div>
-        </div>
+        <button onClick={() => console.log("connect")}>
+          Let's Connect
+        </button>
       </div>
-    </section>
+
+      <div className="banner-image">
+        <img
+          src={headerImg}
+          alt="Banner Illustration"
+          className="banner-img"
+        />
+      </div>
+    </div>
+  </div>
+</section>
 
     // <section className="banner" id="home">
 

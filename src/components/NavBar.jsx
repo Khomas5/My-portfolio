@@ -55,12 +55,12 @@ export const NavBar = () => {
         <span className="navbar-text flex items-center">
           <div className="social-icons">
             <div className="social-icon flex items-center">
-              <a href="#"><img src={navIcon1} alt="" /></a>
-              <a href="#"><img src={navIcon2} alt="" /></a>
-              <a href="#"><img src={navIcon3} alt="" /></a>
+              <a href="https://www.linkedin.com/in/ana-khomasuridze-838b37198"   rel="noopener noreferrer" ><img src={navIcon1} alt="" /></a>
+              <a href="https://github.com/Khomas5"><img src={navIcon2} alt="" /></a>
+              <a href="https://www.upwork.com/freelancers/~0104153b1d763d94b2?mp_source=share"><img src={navIcon3} alt="" /></a>
             </div>
           </div>
-          <button className="vvd" onClick={() => console.log("connect")}>
+          <button className="vvd connect-btn" onClick={() => console.log("connect")}>
             <span>Let's Connect</span>
           </button>
         </span>

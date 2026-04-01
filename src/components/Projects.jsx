@@ -153,7 +153,7 @@ const Projects = () => {
             )}
 
             {activeTab === "third" && (
-              <div className="projects-row">
+              <div className="projects-note">
                 I plan to further enhance the website by integrating
                 additional projects, optimizing for accessibility, and
                 exploring new front-end technologies to stay current with
