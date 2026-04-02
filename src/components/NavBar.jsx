@@ -61,6 +61,7 @@ export const NavBar = () => {
             </div>
           </div>
           <button className="vvd connect-btn" onClick={() => console.log("connect")}>
+          <img src="../src/assets/images/arrow-left-solid-full.svg" className="arrow-image"/>
             <span>Let's Connect</span>
           </button>
         </span>

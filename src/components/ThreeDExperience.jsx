@@ -15,7 +15,9 @@ export const ThreeDExperience = () => {
   const isMobile = useMediaQuery({ query: "(max-width: 768px)" });
 
   return (
-    <div style={{ width: "100%", height: "500px" }}>
+    <div style={{ width: "100%", height: "500px",
+      backgroundImage: "url('../src/assets/images/banner-bg.png')", backgroundSize: "cover",
+     }}>
       <Canvas camera={{ position: [0, 0, 15], fov: 45 }}>
         <ambientLight intensity={1} />
         <directionalLight position={[5, 5, 5]} intensity={2} />
