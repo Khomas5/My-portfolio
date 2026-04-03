@@ -1,8 +1,9 @@
 import { useState, useEffect } from "react";
-import logo from "../assets/images/logo.png";
+import logo from "../assets/images/logo4.png";
 import navIcon1 from "../assets/images/nav-icon1.svg";
 import navIcon2 from "../assets/images/nav-icon2.png";
 import navIcon3 from "../assets/images/nav-icon3.svg";
+import arrow from "../assets/images/arrow-left-solid-full.svg";
 import "./NavBar.css";
 
 export const NavBar = () => {
@@ -61,7 +62,7 @@ export const NavBar = () => {
             </div>
           </div>
           <button className="vvd connect-btn" onClick={() => console.log("connect")}>
-          <img src="../src/assets/images/arrow-left-solid-full.svg" className="arrow-image"/>
+          <img src={arrow} className="arrow-image"/>
             <span>Let's Connect</span>
           </button>
         </span>

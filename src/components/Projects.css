@@ -3,6 +3,10 @@
   position: relative;
   background-color: black;
   overflow: hidden;
+  background-image: url('../assets/images/color-sharp2.png');
+ background-position: top center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .project h2 {

@@ -2,7 +2,7 @@ import { Canvas } from "@react-three/fiber";
 import { OrbitControls, useGLTF } from "@react-three/drei";
 import { useMediaQuery } from "react-responsive";
 import { Suspense } from "react";
-import './ThreeDExperience.css';
+import "./ThreeDExperience.css";
 
 function Model() {
   // Fixed the path to match your public folder structure
@@ -16,39 +16,37 @@ export const ThreeDExperience = () => {
   const isMobile = useMediaQuery({ query: "(max-width: 768px)" });
 
   return (
-    <div className="three-d-content" style={{ display: "flex", alignItems: "center", gap: "40px" }}>
+    <div
+      className="three-d-content"
+      style={{ display: "flex", alignItems: "center", gap: "40px" }}
+    >
+      <div className="three-d-container">
+        <div style={{ width: "40%" }} className="three-d-description">
+          <h1>My 3D Room</h1>
+          <p>This is my awesome 3D model made with React Three Fiber.</p>
+        </div>
 
-<div className="three-d-container"> 
-    
-     <div style={{ width: "40%" }} className="three-d-description">
-    <h1>My 3D Scene</h1>
-    <p>This is my awesome 3D model made with React Three Fiber.</p>
-  </div>
+        <div style={{ width: "100%", height: "500px" }} className="three-d-room">
+          <Canvas camera={{ position: [0, 0, 15], fov: 45 }}>
+            <ambientLight intensity={1} />
+            <directionalLight position={[5, 5, 5]} intensity={2} />
 
+            <OrbitControls
+              enablePan={false}
+              enableZoom={!isTablet && !isMobile}
+              maxDistance={8}
+              minDistance={5}
+              minPolarAngle={Math.PI / 5}
+              maxPolarAngle={Math.PI / 2}
+            />
 
-    <div style={{ width: "100%", height: "500px",
-     
-     }}>
-      <Canvas camera={{ position: [0, 0, 15], fov: 45 }}>
-        <ambientLight intensity={1} />
-        <directionalLight position={[5, 5, 5]} intensity={2} />
-
-        <OrbitControls
-          enablePan={false}
-          enableZoom={!isTablet && !isMobile}
-          maxDistance={8}
-          minDistance={5}
-          minPolarAngle={Math.PI / 5}
-          maxPolarAngle={Math.PI / 2}
-        />
-        
-        {/* Added Suspense to handle the loading state */}
-        <Suspense fallback={null}>
-          <Model />
-        </Suspense>
-      </Canvas>
-    </div>
-</div>
+            {/* Added Suspense to handle the loading state */}
+            <Suspense fallback={null}>
+              <Model />
+            </Suspense>
+          </Canvas>
+        </div>
+      </div>
     </div>
   );
 };

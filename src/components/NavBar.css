@@ -102,9 +102,11 @@ span.navbar-text {
 }
 
 .arrow-image{
-  width: 20%;
-  color: white;
+ width: 20px;
+  margin-right: 10px;
 
+  filter: brightness(0) invert(1); /* makes it white */
+  transition: 0.3s ease-in-out;
 }
 /* The Button */
 .vvd {
@@ -112,7 +114,7 @@ span.navbar-text {
   font-weight: 700;
   color: #fff;
   border: 1px solid #fff;
-  padding: 12px 28px;
+  padding: 12px 40px;
   font-size: 18px;
   margin-left: 18px;
   position: relative;
@@ -137,6 +139,10 @@ span.navbar-text {
   top: 0;
   z-index: 1;
   transition: 0.3s ease-in-out;
+
+    display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
 .vvd:hover {
@@ -146,7 +152,10 @@ span.navbar-text {
 .vvd:hover::before {
   width: 100%;
 }
-
+.vvd:hover .arrow-image {
+  z-index: 2;
+  filter: brightness(0) invert(0); /* makes it black */
+}
 /* Mobile Toggler Lines */
 .navbar-toggler-icon {
   display: block;
@@ -171,8 +180,24 @@ span.navbar-text {
 .navbar-toggler-icon::before { top: -8px; }
 .navbar-toggler-icon::after { top: 8px; }
 
-@media (max-width: 768px) {
+@media (max-width: 850px) {
   .connect-btn {
     display: none;
+  }
+}
+
+@media (max-width: 1000px) {
+  .vvd,
+  .connect-btn {
+    width: auto;
+    min-width: unset;
+    padding: 10px 16px;
+    font-size: 16px;
+    margin-left: 10px;
+  }
+
+  .arrow-image {
+    width: 16px;
+    margin-right: 8px;
   }
 }
