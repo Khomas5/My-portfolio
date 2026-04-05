@@ -4,12 +4,14 @@ import  Skills  from './components/Skills';
 import  Projects  from './components/Projects';
 import  Footer  from './components/Footer';
 import {ThreeDExperience} from './components/ThreeDExperience';
+import {CursorTail} from './components/CursorTail';
 import './App.css';
 
 
 function App() {
   return (
     <div>
+      <CursorTail />
       <NavBar />
       <Banner />
      <Skills />
