@@ -1,22 +1,31 @@
-import { useEffect, useRef } from "react";
+import { useEffect } from "react";
 import "./CursorTail.css";
 
 export const CursorTail = () => {
-  const dotRef = useRef(null);
-
   useEffect(() => {
-    const move = (e) => {
-      if (dotRef.current) {
-        dotRef.current.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
-      }
+    const handleMove = (e) => {
+      const dot = document.createElement("div");
+      dot.className = "trail-dot";
+      dot.style.left = `${e.clientX}px`;
+      dot.style.top = `${e.clientY}px`;
+
+      document.body.appendChild(dot);
+
+      setTimeout(() => {
+        dot.classList.add("fade-out");
+      }, 100);
+
+      setTimeout(() => {
+        dot.remove();
+      }, 700);
     };
 
-    window.addEventListener("mousemove", move);
+    window.addEventListener("mousemove", handleMove);
 
-    return () => window.removeEventListener("mousemove", move);
+    return () => {
+      window.removeEventListener("mousemove", handleMove);
+    };
   }, []);
 
-  return <div ref={dotRef} className="cursor-dot" />;
+  return null;
 };
-
-export default CursorTail;

@@ -1,18 +1,24 @@
-.cursor-dot {
+.trail-dot {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 14px;
-  height: 14px;
-  background: #5ce1e6;
+  width: 10px;
+  height: 10px;
+  background: #d200f2;
   border-radius: 50%;
   pointer-events: none;
-  transform: translate(-50%, -50%);
-  transition: transform 0.08s linear;
   z-index: 99999;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 10px rgba(125, 211, 252, 0.8);
+  opacity: 1;
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
 
-  box-shadow:
-    0 0 10px #5ce1e6,
-    0 0 20px #5ce1e6,
-    0 0 40px #5ce1e6;
+.trail-dot.fade-out {
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(0.3);
+}
+
+@media (max-width: 768px) {
+  .trail-dot {
+    display: none;
+  }
 }
