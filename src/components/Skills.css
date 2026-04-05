@@ -79,8 +79,21 @@
   z-index: -4;
 
 }
+.react-multiple-carousel__arrow {
+  min-width: 42px;
+  min-height: 42px;
+  z-index: 10;
+}
 
+.react-multiple-carousel__arrow--right {
+  right: 10px !important;
+}
+
+.react-multiple-carousel__arrow--left {
+  left: 10px !important;
+}
 /* Responsive tweaks */
+
 @media (max-width: 1024px) {
   .skill-bx {
     padding: 50px 30px;
@@ -95,6 +108,16 @@
     width: 100px;
     height: 100px;
   }
+
+}
+@media (max-width: 650px) {
+.skills-container {
+   
+    padding: 40px 20px;
+}
+     .skill-bx {
+        padding: 50px 0px;
+    }  
 }
 
 @media (max-width: 464px) {

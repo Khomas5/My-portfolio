@@ -12,22 +12,23 @@ export const NavBar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   const menuRef = useRef(null);
-useEffect(() => {
-  const handleClickOutside = (event) => {
-    if (
-      menuOpen &&
-      menuRef.current &&
-      !menuRef.current.contains(event.target)
-    ) {
-      setMenuOpen(false);
-    }
-  };
 
-  document.addEventListener("mousedown", handleClickOutside);
-  return () => {
-    document.removeEventListener("mousedown", handleClickOutside);
-  };
-}, [menuOpen]);
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (
+        menuOpen &&
+        menuRef.current &&
+        !menuRef.current.contains(event.target)
+      ) {
+        setMenuOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [menuOpen]);
 
   useEffect(() => {
     const onScroll = () => {
@@ -45,28 +46,38 @@ useEffect(() => {
   return (
     <nav className={`navbar ${scrolled ? "scrolled" : ""} flex items-center`}>
       <div className="container mx-auto flex items-center justify-between px-4">
-        <a href="#home" className="navbar-brand" onClick={() => handleNavClick("home")}>
+        <a
+          href="#home"
+          className="navbar-brand"
+          onClick={() => handleNavClick("home")}
+        >
           <img src={logo} alt="Logo" className="w-full" />
         </a>
 
         <div className="navbar-nav hidden md:flex items-center">
           <a
             href="#home"
-            className={`nav-link navbar-link ${activeLink === "home" ? "active" : ""}`}
+            className={`nav-link navbar-link ${
+              activeLink === "home" ? "active" : ""
+            }`}
             onClick={() => handleNavClick("home")}
           >
             Home
           </a>
           <a
             href="#skills"
-            className={`nav-link navbar-link ${activeLink === "skills" ? "active" : ""}`}
+            className={`nav-link navbar-link ${
+              activeLink === "skills" ? "active" : ""
+            }`}
             onClick={() => handleNavClick("skills")}
           >
             Skills
           </a>
           <a
             href="#projects"
-            className={`nav-link navbar-link ${activeLink === "projects" ? "active" : ""}`}
+            className={`nav-link navbar-link ${
+              activeLink === "projects" ? "active" : ""
+            }`}
             onClick={() => handleNavClick("projects")}
           >
             Projects
@@ -76,7 +87,10 @@ useEffect(() => {
         <span className="navbar-text hidden md:flex items-center">
           <div className="social-icons">
             <div className="social-icon flex items-center">
-              <a href="https://www.linkedin.com/in/ana-khomasuridze-838b37198" rel="noopener noreferrer">
+              <a
+                href="https://www.linkedin.com/in/ana-khomasuridze-838b37198"
+                rel="noopener noreferrer"
+              >
                 <img src={navIcon1} alt="" />
               </a>
               <a href="https://github.com/Khomas5">
@@ -88,48 +102,51 @@ useEffect(() => {
             </div>
           </div>
 
-          <button className="vvd connect-btn" onClick={() => console.log("connect")}>
+          <button
+            className="vvd connect-btn"
+            onClick={() => console.log("connect")}
+          >
             <img src={arrow} className="arrow-image" alt="" />
             <span>Let's Connect</span>
           </button>
         </span>
 
-        <button
-          className="navbar-toggler md:hidden"
-          onClick={() => setMenuOpen(!menuOpen)}
-          aria-label="Toggle navigation"
-        >
-          <span className="navbar-toggler-icon"></span>
-        </button>
-      </div>
+        <div ref={menuRef} className="mobile-menu-wrapper md:hidden">
+          <button
+            className="navbar-toggler"
+            onClick={() => setMenuOpen((prev) => !prev)}
+            aria-label="Toggle navigation"
+          >
+            <span className="navbar-toggler-icon"></span>
+          </button>
 
-      {menuOpen && (
-        <div ref={menuRef} className="mobile-menu md:hidden">
-          <a
-            href="#home"
-            className={activeLink === "home" ? "active" : ""}
-            onClick={() => handleNavClick("home")}
-          >
-            Home
-          </a>
-          <a
-            href="#skills"
-            className={activeLink === "skills" ? "active" : ""}
-            onClick={() => handleNavClick("skills")}
-          >
-            Skills
-          </a>
-          <a
-            href="#projects"
-            className={activeLink === "projects" ? "active" : ""}
-            onClick={() => handleNavClick("projects")}
-          >
-            Projects
-          </a>
-
-         
+          {menuOpen && (
+            <div className="mobile-menu">
+              <a
+                href="#home"
+                className={activeLink === "home" ? "active" : ""}
+                onClick={() => handleNavClick("home")}
+              >
+                Home
+              </a>
+              <a
+                href="#skills"
+                className={activeLink === "skills" ? "active" : ""}
+                onClick={() => handleNavClick("skills")}
+              >
+                Skills
+              </a>
+              <a
+                href="#projects"
+                className={activeLink === "projects" ? "active" : ""}
+                onClick={() => handleNavClick("projects")}
+              >
+                Projects
+              </a>
+            </div>
+          )}
         </div>
-      )}
+      </div>
     </nav>
   );
 };
